@@ -19,13 +19,16 @@ set mouse=a
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set switchbuf+=usetab,newtab
 "set tags=tags;
+
+"python
 let python_highlight_all = 1
 let g:unite_source_grep_command='silent ag'
 let g:airline_theme='luna'
+let g:NERDTreeMapOpenInTabSilent = '<2-LeftMouse>'
 let &t_Co=256
 nnoremap <silent> <F3> :Ag<CR>
 nnoremap <silent> <F8> :TlistToggle<CR>
-nnoremap <silent> <F9> :NERDTreeToggle<CR>
+nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 let mapleader = "\<Space>"
 noremap <leader>1 1gt
 noremap <leader>2 2gt
@@ -43,6 +46,22 @@ au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 colo elflord
+
+"go
+nnoremap <silent> <F4> :GoDef<CR>
+au FileType go nmap <Leader>ds <Plug>(go-def-split)
+au FileType go nmap <Leader>dv <Plug>(go-def-vertical)
+au FileType go nmap <Leader>dt <Plug>(go-def-tab)
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <leader>c <Plug>(go-coverage)
+let g:go_highlight_functions = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_fields = 1
+let g:go_highlight_types = 1
+let g:go_highlight_operators = 1
+let g:go_highlight_build_constraints = 1
 "setlocal foldmethod=indent
 "set foldlevel=2
 
@@ -89,3 +108,6 @@ endfunction
 nmap <silent> <leader>l :call ToggleList("Location List", 'l')<CR>
 nmap <silent> <leader>c :call ToggleList("Quickfix List", 'c')<CR>
 noremap q1 :q!<CR>
+let g:nerdtree_tabs_meaningful_tab_names=1
+let g:nerdtree_tabs_autoclose=1
+let g:nerdtree_tabs_synchronize_view=1
