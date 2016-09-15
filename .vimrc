@@ -1,14 +1,20 @@
 execute pathogen#infect()
 syntax on
+filetype off
+filetype plugin indent on
 set number
 set hlsearch
 set virtualedit=onemore
 set expandtab
 set shiftwidth=4
 set tabstop=4
-set autoindent
-set smartindent
-set cindent
+autocmd FileType yaml setlocal ts=2 sw=2
+autocmd FileType python setlocal ts=4 sw=4
+autocmd TabEnter * stopinsert
+"autocmd BufEnter * stopinsert
+"set autoindent
+"set smartindent
+"set cindent
 set ruler
 set smartcase
 set ignorecase
@@ -75,8 +81,9 @@ let g:ctrlp_prompt_mappings = {
        \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
        \ }
 
-let g:jedi#use_tabs_not_buffers = 1
+"let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#show_call_signatures = "1"
+let g:jedi#auto_initialization = 1
 
 function! GetBufferList()
   redir =>buflist
