@@ -48,6 +48,7 @@ noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
 noremap <leader><PageUp> :tabprevious<CR>
 noremap <leader><PageDown> :tabnext<CR>
+noremap <leader><i> :tabm -1<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
@@ -81,7 +82,7 @@ let g:ctrlp_prompt_mappings = {
        \ 'AcceptSelection("t")': ['<cr>', '<2-LeftMouse>'],
        \ }
 
-"let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#use_tabs_not_buffers = 1
 let g:jedi#show_call_signatures = "1"
 let g:jedi#auto_initialization = 1
 
@@ -118,3 +119,7 @@ noremap q1 :q!<CR>
 let g:nerdtree_tabs_meaningful_tab_names=1
 let g:nerdtree_tabs_autoclose=1
 let g:nerdtree_tabs_synchronize_view=1
+
+map ,e :e <C-R>=expand("%:p:h") . "/" <CR>
+map ,t :tabe <C-R>=expand("%:p:h") . "/" <CR>
+map ,s :split <C-R>=expand("%:p:h") . "/" <CR>
