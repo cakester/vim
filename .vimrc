@@ -46,8 +46,8 @@ noremap <leader>7 7gt
 noremap <leader>8 8gt
 noremap <leader>9 9gt
 noremap <leader>0 :tablast<cr>
-noremap <leader><PageUp> :tabprevious<CR>
-noremap <leader><PageDown> :tabnext<CR>
+noremap <leader>h :tabprevious<CR>
+noremap <leader>j :tabnext<CR>
 noremap <leader>f :tabm -1<cr>
 noremap <leader>r :tabm +1<cr>
 au TabLeave * let g:lasttab = tabpagenr()
