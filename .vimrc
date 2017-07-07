@@ -20,11 +20,17 @@ set smartcase
 set ignorecase
 set laststatus=2
 set incsearch
-"set autochdir
+set autochdir
 set mouse=a
+set autoindent
+set smartindent
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set switchbuf+=usetab,newtab
 "set tags=tags;
+
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.a$' }
 
 "python
 let python_highlight_all = 1
@@ -32,10 +38,10 @@ let g:unite_source_grep_command='silent ag'
 let g:airline_theme='luna'
 let g:NERDTreeMapOpenInTabSilent = '<2-LeftMouse>'
 let &t_Co=256
-nnoremap <silent> <F3> :Ag<CR>
 nnoremap <silent> <F8> :TlistToggle<CR>
 nnoremap <silent> <F9> :NERDTreeTabsToggle<CR>
 let mapleader = "\<Space>"
+noremap <leader>` :Ag<CR>
 noremap <leader>1 1gt
 noremap <leader>2 2gt
 noremap <leader>3 3gt
@@ -72,9 +78,6 @@ let g:go_highlight_operators = 1
 let g:go_highlight_build_constraints = 1
 "setlocal foldmethod=indent
 "set foldlevel=2
-
-source ~/.vim/mswin.vim
-behave mswin
 
 set shell=/bin/bash
 
