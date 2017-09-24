@@ -28,6 +28,7 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 set switchbuf+=usetab,newtab
 "set tags=tags;
 
+let g:ctrlp_working_path_mode = 0
 let g:ctrlp_custom_ignore = {
     \ 'dir':  '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|test$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$\|\.a$' }
@@ -55,7 +56,7 @@ noremap <leader>0 :tablast<cr>
 noremap <leader>h :tabprevious<CR>
 noremap <leader>j :tabnext<CR>
 noremap <leader>f :tabm -1<cr>
-noremap <leader>r :tabm +1<cr>
+noremap <leader>g :tabm +1<cr>
 au TabLeave * let g:lasttab = tabpagenr()
 nnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
 vnoremap <silent> <c-l> :exe "tabn ".g:lasttab<cr>
